@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="WpfAppTest.View.ComboBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <StackPanel Orientation="Vertical">
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Выберите город " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding CityList}" x:Name="CityName" DisplayMemberPath="CityName" SelectedValue="{Binding SelectedCityCode}" SelectedValuePath="CityCode" Margin="0 0 10 0" />
+            <Label Content="{Binding SelectedCityCode}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Выберите цех " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding DepList}"  x:Name="DepName" DisplayMemberPath="DepName" SelectedValue="{Binding SelectedDep}" SelectedValuePath="DepName" IsEnabled="{Binding AllowDepSelection}" Margin="0 0 10 0"/>
+            <Label Content="{Binding SelectedDep}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Выберите сотрудника " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding EmpList}" x:Name="Name" DisplayMemberPath="Name" SelectedValue="{Binding SelectedEmp}" SelectedValuePath="Name" Margin="0 0 10 0"/>
+            <Label Content="{Binding SelectedEmp}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Выберите смену " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding ShiftList}"  x:Name="ShiftName" DisplayMemberPath="ShiftName" SelectedValue="{Binding SelectedShiftId}" SelectedValuePath="shiftId"  Margin="0 0 10 0"/>
+            <Label Content="{Binding SelectedShiftId}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Выберите Бригаду " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding TeamList}" x:Name="TeamName" DisplayMemberPath="TeamName" SelectedValue="{Binding SelectedTeam}" SelectedValuePath="TeamName" IsEnabled="{Binding AllowTeamSelection}" Margin="0 0 10 0"/>
+            <Label Content="{Binding SelectedTeam}"/>
+        </StackPanel>
+
+        <StackPanel>
+            <Button Content="Save" Click="Button_Click"></Button>
+        </StackPanel>
+
+
+    </StackPanel>
+</UserControl>
